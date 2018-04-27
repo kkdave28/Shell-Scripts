@@ -1,0 +1,18 @@
+#!/bin/bash
+cr=`echo $'\n> '`
+echo "$1" >> README.md
+git init
+git add -A
+read -p "What would be your first commit message? $cr" message
+git commit -m "$message"
+read -p "Please enter the git link to repository $cr" link
+git remote add origin $link
+echo " If the process prompts you to authenticate, please authenticate "
+while true; do
+if [[ !$(git push -u origin master)1>/dev/null ]]; then
+	echo "Authentication failed, please try again."
+else
+	echo "Authentication  successful, repo has been successfully created."
+	break;
+fi
+done
