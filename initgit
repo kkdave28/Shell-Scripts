@@ -1,6 +1,7 @@
 #!/bin/bash
 cr=`echo $'\n> '`
-echo "$1" >> README.md
+read -p "What would you like to put in ReadMe? $cr" readme
+echo "$readme" >> README.md
 git init
 git add -A
 read -p "What would be your first commit message? $cr" message

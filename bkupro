@@ -1,0 +1,3 @@
+cd ~/
+cp -r .* ~/Backup-profiles/ 2>/dev/null
+

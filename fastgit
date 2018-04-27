@@ -1,3 +1,5 @@
+cr=`echo $'\n> '`
 git add -A
-git commit -m "$1"
+read -p "What is your commit message? $cr" message
+git commit -m "$message"
 git push
