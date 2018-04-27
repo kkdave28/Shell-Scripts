@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+echo "Usage: srm <arg1> <arg2>....<argx>"
+else
+	for i in "$@"; do
+	mv "$i" ~/Temp-Trash
+    	done
+fi
