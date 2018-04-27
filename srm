@@ -7,5 +7,6 @@ echo "Usage: srm <arg1> <arg2>....<argx>"
 else
 	for i in "$@"; do
 	mv "$i" ~/Temp-Trash
+	echo "$i `pwd`" >> ~/Temp-Trash/loglist.txt
     	done
 fi
