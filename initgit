@@ -7,6 +7,11 @@ git add -A
 read -p "What would be your first commit message? $cr" message
 git commit -m "$message"
 read -p "Please enter the git link to repository $cr" link
+if [ "$link" = "" ]; then
+git push
+echo "Repository created, exiting now..."
+exit
+fi
 git remote add origin $link
 echo " If the process prompts you to authenticate, please authenticate "
 while true; do
