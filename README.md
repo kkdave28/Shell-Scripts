@@ -24,3 +24,6 @@ These are all my scripts that I frequently use.
 
    Usage: $srm [file-1] [file-2] [file-3]... 
 
+7. lrm: list all the files that are safely removed and are in /home/usr/Temp-Trash/ directory.
+
+   Usage: $lrm
