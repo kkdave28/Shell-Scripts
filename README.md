@@ -12,7 +12,7 @@ Usage: $clnbkup
 
 Usage: $fastgit
 
-4. initgit: initializes a repository at the current working directory and ask the user to put anything in the Readme.md, asks user to input the first commit message and asks the user whether they want to push the origin to a preexisting repo or not.
+4. initgit: initializes a repository at the current working directory and ask the user to put anything in the Readme.md, asks user to input the first commit message and asks the user the link to the repo they want to push it to.
 
 Usage: $initgit
 
