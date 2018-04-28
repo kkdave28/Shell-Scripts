@@ -4,13 +4,13 @@ if [[ "$#" == 0 ]]; then
 	exit
 fi
 IFS=$'\n'
-for i in $(cat ~/Temp-Trash/loglist.txt); do
+for i in $(cat ~/Temp-Trash/.loglist.txt); do
 	IFS=' '
 	args=($i)
 	if [[ "${args[0]}" == "$1" ]]; then
 	    echo "file found and restoring to it's original location"
 	    cd ~/Temp-Trash
-	    sed -i "/${args[0]}/d" loglist.txt
+	    sed -i "/${args[0]}/d" .loglist.txt
 	    mv ${args[0]} ${args[1]}
 	    exit
 	fi
