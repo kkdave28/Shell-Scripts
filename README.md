@@ -27,3 +27,9 @@ These are all my scripts that I frequently use.
 7. lrm: list all the files that are safely removed and are in /home/usr/Temp-Trash/ directory.
 
    Usage: $lrm
+
+8. urm: Restores the file in the /home/usr/Temp-Trash directory to the original directory it was deleted from if found, if not found, prints an error message.
+
+   Usage: $urm [file-name]
+
+

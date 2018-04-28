@@ -1,0 +1,18 @@
+if [[ "$#" == 0 ]]; then
+	echo "Usage urm <arg>"
+fi
+IFS=$'\n'
+for i in $(cat ~/Temp-Trash/loglist.txt); do
+	IFS=' '
+	args=($i)
+#	echo ${args[0]}
+	if [[ "${args[0]}" == "$1" ]]; then
+	    echo "file found and restoring to it's original location"
+	    cd ~/Temp-Trash
+	    sed -i "/${args[0]}/d" loglist.txt
+	    mv ${args[0]} ${args[1]}
+	    exit
+	fi
+	IFS=$'\n'
+done
+echo "File not found, please try again."
