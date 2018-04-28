@@ -3,7 +3,7 @@ if [ ! -d "~/Temp-Trash" ]; then
 `cd ~/;mkdir -p Temp-Trash`
 fi
 if [ $# -eq 0 ]; then
-echo "Usage: srm <arg1> <arg2>....<argx>"
+echo "Usage: srm [arg1] [arg2]....[argx]"
 else
 	for i in "$@"; do
 	mv "$i" ~/Temp-Trash
