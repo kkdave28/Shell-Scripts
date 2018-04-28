@@ -1,0 +1,3 @@
+cd ~/Temp-Trash
+echo -n "The size of trash is "
+du -h

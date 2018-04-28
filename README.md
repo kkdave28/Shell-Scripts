@@ -32,4 +32,6 @@ These are all my scripts that I frequently use.
 
    Usage: $urm [file-name]
 
+9. drm: Displays the total space occupied by the /home/usr/Temp-Trash directory.
 
+   Usage: $drm
