@@ -2,11 +2,11 @@
 cd ~/Temp-Trash
 cr=`echo $'\n> '`
 while true; do
-read -p "Are you sure you want to delete all files in temptrash? $cr" ans
-case $ans in 
-[Yy]* )  rm -rf *; rm -f *; break;;
-[Nn]* ) exit;;
-* ) echo "please answer in yes or no.";;
-esac
+    read -p "Are you sure you want to delete all files in temptrash? $cr" ans
+    case $ans in 
+        [Yy]* )  rm -rf *; rm -f *; break;;
+        [Nn]* ) exit;;
+        * ) echo "please answer in yes or no.";;
+    esac
 done
 

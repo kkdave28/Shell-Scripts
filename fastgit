@@ -1,3 +1,4 @@
+#!/bin/bash
 cr=`echo $'\n> '`
 git add -A 1>/dev/null
 read -p "What is your commit message? $cr" message
