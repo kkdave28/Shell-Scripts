@@ -1,0 +1,5 @@
+#!/bin/bash
+case $# in
+[0] ) ls -l 2>/dev/null; exit;;
+* ) ls -l -d -S "$@" 2>/dev/null; exit;;
+esac

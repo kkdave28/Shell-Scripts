@@ -35,3 +35,7 @@ These are all my scripts that I frequently use.
 9. drm: Displays the total space occupied by the /home/usr/Temp-Trash directory.
 
    Usage: $drm
+
+10. lss: lists all the files in the present working directory, sorted in descending order of file size  or directory whose name is passed as an argument. It is an extension from the 'ls' command. Refer to the man page of 'ls' command for information on option.
+
+    Usage: $lss [options]
