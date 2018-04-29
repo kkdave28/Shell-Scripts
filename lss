@@ -1,5 +1,17 @@
 #!/bin/bash
+star=0
 case $# in
-[0] ) ls -l 2>/dev/null; exit;;
-* ) ls -l -d -S "$@" 2>/dev/null; exit;;
+[0] ) ls -l -d -S * 2>/dev/null; exit;;
+* )
+for var in "$@"; do
+if [ -d "$var" ] || [ -f "$var" ]; then
+    star=1
+ fi
+done
+if [ $star -eq 1 ]; then
+ls -l -d -S "$@" 2> /dev/null
+else
+ls -l -d -S * "$@" 2> /dev/null
+fi
+exit
 esac
