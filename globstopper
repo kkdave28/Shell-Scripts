@@ -1,8 +1,0 @@
-globstopper() {
-  if [[ "$2" == "*" ]]
-    then echo "You cannot use a wildcard"
-    return
-  fi
-  set +f
-  "$@";
-}

@@ -1,7 +1,13 @@
 #!/bin/bash
 star=0
+for x in "$@"; do
+if [[ "$x" = "-v"* ]] || [[ "$x" == "-t"* ]] || [[ "$x" == "-T"* ]] || [[ "$x" == "-r"* ]] || [[ "$x" == "-m"* ]] || [[ "$x" == "-f"* ]]; then
+echo "Option $x is not permitted"
+exit 1
+fi
+done
 case $# in
-[0] ) ls -l -d -S * 2>/dev/null; exit;;
+[0] ) ls -l -d -S * 2>/dev/null; exit 1;;
 * )
 for var in "$@"; do
 if [ -d "$var" ] || [ -f "$var" ]; then
