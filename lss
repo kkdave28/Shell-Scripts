@@ -1,7 +1,7 @@
 #!/bin/bash
 star=0
 for x in "$@"; do
-if [[ "$x" = "-v"* ]] || [[ "$x" == "-t"* ]] || [[ "$x" == "-T"* ]] || [[ "$x" == "-r"* ]] || [[ "$x" == "-m"* ]] || [[ "$x" == "-f"* ]]; then
+if [[ "$x" = "-v"* ]] || [[ "$x" == "-t"* ]] || [[ "$x" == "-T"* ]] || [[ "$x" == "-r"* ]] || [[ "$x" == "-m"* ]] || [[ "$x" == "-f"* ]] || [[ "$x" == "-x"* ]] || [[ "$x" == "-X"* ]]; then
 echo "Option $x is not permitted"
 exit 1
 fi
@@ -19,5 +19,5 @@ ls -l -d -S "$@" 2> /dev/null
 else
 ls -l -d -S * "$@" 2> /dev/null
 fi
-exit
+exit 1
 esac
