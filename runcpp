@@ -4,7 +4,8 @@ if [ $# -eq 0 ];then
     echo "Usage: runcpp [file.cpp]"
     exit -1
 fi
-filename=`echo "$1" | sed 's/\..*//'`
+filename=`echo "$1" | sed 's/\.cpp//'`
 ln -s ~/Shell-Scripts/cplusplusinterp "$filename"
+echo "--------$filename--------"
 ./"$filename" "${@:2}"
 rm -f "$filename"

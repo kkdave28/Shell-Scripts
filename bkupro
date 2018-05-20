@@ -1,3 +1,6 @@
 #!/bin/bash
+if [ ! -d "~/Backup-profiles" ];then
+    mkdir -p ~/Backup-profiles
+fi
 cd ~/
 cp -r .* ~/Backup-profiles/ 2>/dev/null
