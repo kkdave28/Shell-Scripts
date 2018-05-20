@@ -1,0 +1,8 @@
+#!/bin/bash
+cr=`echo $'\n> '`
+read -p "What is the link to your git repo? $cr" link
+echo "If the command prompts you for username and passowrd, please enter them"
+git clone "$link" 1>/dev/null
+echo "Cloned repository successfully..."
+exit 0
+
