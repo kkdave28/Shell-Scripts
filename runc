@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ $# -eq 0 ];then
+    echo "No argument detected"
+    echo "Usage: runcpp [file.c]"
+    exit -1
+fi
+filename=`echo "$1" | sed 's/\.c//'`
+ln -s ~/Shell-Scripts/cinterp "$filename"
+echo "--------$filename--------"
+./"$filename" "${@:2}"
+rm -f "$filename"
