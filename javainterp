@@ -24,6 +24,6 @@ echo "use the command ln -s javainterp <name of your java file> to make a link f
 exit 1
 fi
 javac  "$filename.java" -d ~/temp-progs/
-java -cp ~/temp-progs/ "$filename"
+java -cp ~/temp-progs/ "$filename" "$@"
 rm "$filename"
 rm ~/temp-progs/"$filename.class"
