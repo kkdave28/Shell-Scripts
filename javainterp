@@ -1,0 +1,29 @@
+#!/bin/bash
+#work to do: traps
+filename=`echo "$0"| sed 's/\.\///'`
+trap cleanup 0 1 2 3 15
+
+cleanup()
+{
+    rm -f ~/temp-progs/"$0.class"
+    rm -f ~/temp-progs/core.*
+    rm -f ~/temp-progs/vgcore.*
+    rm -f core.*
+    rm -f vgcore.*
+    exit 0
+
+}
+if [ ! -d ~/temp/progs ]; then
+`cd ~; mkdir -p temp-progs`
+fi
+
+
+if [ "$filename" = "javainterp" ]; then
+echo "You need to make a link to the java file you want to use this script on..."
+echo "use the command ln -s javainterp <name of your java file> to make a link first and then run the link."
+exit 1
+fi
+javac  "$filename.java" -d ~/temp-progs/
+java -cp ~/temp-progs/ "$filename"
+rm "$filename"
+rm ~/temp-progs/"$filename.class"
