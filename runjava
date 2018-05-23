@@ -6,4 +6,5 @@ if [ $# -eq 0 ];then
 fi
 filename=`echo "$1" | sed 's/\.java//'`
 ln -s ~/Shell-Scripts/javainterp "$filename"
+echo "-------------$filename----------------"
 ./"$filename" "${@:2}"

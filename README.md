@@ -1,5 +1,7 @@
 These are all my scripts that I frequently use.
 
+Note: To run these scripts from any directory, you need to configure the $PATH variable to look for these scripts in the directory where they are stored. TO do that, simple add this line (without the brackets) [ export PATH=$PATH:<path to the directory where the scripts are stored> ] at the end of your .bashrc file found in the home directory. Make sure these scripts have the execute permission bits turned on. You can simple do that by chmod +x <name of the script>.
+
 1. bkupro: Takes a backup of all '.\*' files from the /home/usr directory and copies it to /home/usr/Backup-profiles/ .
 
    Usage: $bkupro
@@ -36,6 +38,38 @@ These are all my scripts that I frequently use.
 
    Usage: $drm
 
-10. lss: lists all the files in the present working directory, sorted in descending order of file size  or directory whose name is passed as an argument. It is an extension from the 'ls' command. Refer to the man page of 'ls' command for information on option.
+10. lss: lists all the files in the present working directory, sorted in descending order of file size  or directory whose name is passed as an argument. It is an extension from the 'ls' command. Refer to the man page of 'ls' command for information on option. man (1) ls.
 
     Usage: $lss [options]
+
+11. cinterp and cplusplusinterp: interpreter for C/C++ programs. Allows the user to run the C/C++ program temporarily by compiling the file to ~/temp-progs and then running the program from that directory. After the program executes, it cleans up the executable, and any other temporary files that may have been created during the compilation/execution.
+    
+    Usage: ln -s cinterp/cplusplusinterp [name of the .c or .cpp file without the extension].
+    execute the newly formed link directly. 
+    
+    example: to run foo.c/foo.cpp
+    $ ln -s cinterp/cplusplusinterp foo
+    $ ./foo
+
+12. runc and runcpp: wrapper around the cinterp and cplusplusinterp. User can pass the C/C++ file directly with any other command line arguments separated by spaces, it will do the symbolic linking for you, execute the program and cleanup afterwards.
+    
+    Usage: runc/runcpp [.c/.cpp file with extension] [command line arguments...]
+
+    example: to run foo.c/foo.cpp
+    $ runc foo.c [command line args]
+    $ runcpp foo.cpp [command line args]
+
+13. javainterp: interpreter for java programs. Allows the user to run java programs without having to deal with memory overheads of .class files. Compiles the .class file and puts it into ~/temp-progs and then executes the java program. 
+
+    Usage: ls -s javainterp [name of the java file without the .java extension].
+
+    example: to run foo.java
+    $ ln -s javainterp foo
+    $ ./foo
+
+14. runjava: Wrapper for javainterp, allows the user to directly run java files without explicitly creating the link to javainterp. Allows the user to pass command line arguments to java programs.
+    
+    Usage: runjava [name of the java file with the extension] [command line args...]
+
+    example: to run foo.java
+    $ runjava foo.java [command line arguments].
