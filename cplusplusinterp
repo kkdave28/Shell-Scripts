@@ -21,6 +21,8 @@ echo "use the command ln -s C-interp <name of your .c file> to make a link first
 echo "Example: ln -s C-interp foo.c; ./foo <args>"
 exit 1
 fi
-g++ "$0.cpp" -std=c++11 -O3 -o ~/temp-progs/"$0"
+cr=`echo $'\n> '`
+read -p "Do you want to give any compiler arguments? $cr" compiler_args
+g++ "$0.cpp" -std=c++11 "$compiler_args" -O3 -o ~/temp-progs/"$0"
 ~/temp-progs/"$0" "$@"
 rm -f ~/temp-progs/"$0"
