@@ -1,6 +1,6 @@
 These are all my scripts that I frequently use.
 
-Note: To run these scripts from any directory, you need to configure the $PATH variable to look for these scripts in the directory where they are stored. TO do that, simple add this line (without the brackets) [ export PATH=$PATH:<path to the directory where the scripts are stored> ] at the end of your .bashrc file found in the home directory. Make sure these scripts have the execute permission bits turned on. You can simple do that by chmod +x <name of the script>.
+Note: To run these scripts from any directory, you need to configure the $PATH variable to look for these scripts in the directory where they are stored. TO do that, simple add this line (without the brackets) [ export PATH=$PATH:"path to the directory where the scripts are stored" ] at the end of your .bashrc file found in the home directory. Make sure these scripts have the execute permission bits turned on. You can simple do that by chmod +x "name of the script".
 
 1. bkupro: Takes a backup of all '.\*' files from the /home/usr directory and copies it to /home/usr/Backup-profiles/ .
 
