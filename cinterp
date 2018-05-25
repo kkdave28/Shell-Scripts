@@ -1,5 +1,7 @@
 #!/bin/bash
 #work to do: traps
+cr=`echo $'\n> '`
+read -p "Do you want to give any compiler arguments? [separate each arg by a space] $cr" compiler_args
 trap cleanup 0 1 2 3 15
 
 cleanup()
@@ -21,8 +23,7 @@ echo "use the command ln -s C-interp <name of your .c file> to make a link first
 echo "Example: ln -s C-interp foo.c; ./foo <args>"
 exit 1
 fi
-cr=`echo $'\n> '`
-read -p "Do you want to give any compiler arguments? $cr" compiler_args
-gcc "$0.c" "$compiler_args" -o ~/temp-progs/"$0"
+
+gcc "$0.c" -O3 "$compiler_args" -o ~/temp-progs/"$0"
 ~/temp-progs/"$0" "$@"
 rm -f ~/temp-progs/"$0"
