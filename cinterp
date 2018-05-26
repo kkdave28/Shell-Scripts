@@ -17,13 +17,16 @@ cleanup()
 if [ ! -d ~/temp/progs ]; then
 `cd ~; mkdir -p temp-progs`
 fi
-if [ "$0" = "./C-interp" ]; then
+if [ "$0" = "./cinterp" ]; then
 echo "You need to make a link to the .c file you want to use this script on..."
 echo "use the command ln -s C-interp <name of your .c file> to make a link first and then run the link."
 echo "Example: ln -s C-interp foo.c; ./foo <args>"
 exit 1
 fi
-
-gcc "$0.c" -O3 "$compiler_args" -o ~/temp-progs/"$0"
+if [ -z "$compiler_args" ]; then
+    gcc "$0.c" -O3 -o ~/temp-progs/"$0"
+else
+    gcc "$0.c" -O3 "$compiler_args" -o ~/temp-progs/"$0"
+fi
 ~/temp-progs/"$0" "$@"
 rm -f ~/temp-progs/"$0"
