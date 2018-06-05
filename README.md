@@ -83,3 +83,9 @@ Note: To run these scripts from any directory, you need to configure the $PATH v
     example: to run foo.java
     
     $ runjava foo.java [command line arguments].
+
+15. kill_proc: Terminates all the instances of the process denoted by the name passed as an argument to it.
+
+    Usage: kill_proc [proc-name]
+
+    Note: In future, this script will be able to take multiple arguments that can kill multiple instances of multiple processes. This is only the basic version of this script.
