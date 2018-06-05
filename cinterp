@@ -26,7 +26,7 @@ fi
 if [ -z "$compiler_args" ]; then
     gcc "$0.c" -O3 -o ~/temp-progs/"$0"
 else
-    gcc "$0.c" -O3 "$compiler_args" -o ~/temp-progs/"$0"
+    gcc "$0.c" -O3 $compiler_args -o ~/temp-progs/"$0"
 fi
 ~/temp-progs/"$0" "$@"
 rm -f ~/temp-progs/"$0"
