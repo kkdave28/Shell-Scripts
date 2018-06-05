@@ -1,0 +1,12 @@
+
+clean_dir_func(){
+	if [ -z "$1" ]; then
+	rm -rf "$1"
+	exit 0
+	else
+	   for var in "$1"; do
+		clean_dir_func "$var"
+		done
+	fi
+}
+clean_dir_func "$1"
