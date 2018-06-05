@@ -3,4 +3,5 @@ cr=`echo $'\n> '`
 git add -A 1>/dev/null
 read -p "What is your commit message? $cr" message
 git commit -m "$message" 1>/dev/null
+echo " If the process prompts you to authenticate, please authenticate "
 git push 1>/dev/null
