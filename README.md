@@ -93,10 +93,14 @@ Note: To run these scripts from any directory, you need to configure the $PATH v
 16. wd: Warp to directories. Add warp points to instantly navigate to those directory. User can set, delete and list warp points. Warp points are shothand for path to directories.
 
     Usage: wd [option] [warp-point-name]
+           
            options:
                     list                  --> Lists all the warp point currently set
+                    
                     add [warp-point-name] --> Adds the warp-point [name] to the current working directory. Cannot be named add, list, del or if the warp point name still exists.
+                    
                     del [warp-point-name] --> Delets the warp-point [name]. Cannot be named add, list, del.
+                    
                     [warp-point-name]     --> chdirs to the warp point designated by the warp-point-name
     
     Note: In order to ensure that the scripts chdirs in the parent shell, add this line to the .bashrc/.zshrc/.shrc etc.
