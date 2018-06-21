@@ -1,0 +1,99 @@
+#!/bin/bash
+exitcode=2
+if [ $# -eq 0 ]; then
+	echo "No arguments found"
+	echo "Usage:"
+	echo "wd add <Warp point name>  --> adds the warp point with the name at the cwd"
+	echo "wd <name> 		  --> chdirs directly to that wapr point if it exists"
+	echo "wd list 		  --> lists all the warp points added"
+	echo "wd del <Warp point name>  --> removes warp point associated with the given name"
+	exitcode=1
+fi
+
+if [ "$1" = "add" ]; then
+	if [ ! "$#" -eq 2 ]; then
+		echo "Need a name for the warp point"
+		echo "wd add <Warp point name> --> adds the warp point with the name at the cwd"
+		exitcode=1
+	fi
+	if [ "$2" = "add" ]; then
+		echo "name of the warp point cannot be add"
+		exitcode=1
+	else
+		IFS=$'\n'
+		for i in $(cat ~/.warppoints); do
+			IFS=' '
+			args=($i)
+			if [ "${args[0]}" = "$2" ]; then
+				echo "Warp point with that name already exists"
+				exitcode=1
+				break
+			fi
+			IFS=$'\n'
+		done
+		if [ $exitcode -eq 2 ]; then
+			echo "$2 `pwd`" >> ~/.warppoints
+			exitcode=0
+		fi
+	fi
+fi
+
+
+if [ "$1" = "del" ]; then
+	if [ ! "$#" -eq 2 ]; then
+		echo "Need a name for the warp point"
+		echo "wd del <Warp point name>  --> removes warp point associated with the given name"
+		exitcode=1
+	fi
+	if [ "$2" = "del" ]; then
+		echo "name of the warp point cannot be del"
+		exitcode=1
+	else
+		IFS=$'\n'
+		for i in $(cat ~/.warppoints); do
+			IFS=' '
+			args=($i)
+			if [ "${args[0]}" = "$2" ]; then
+				sed -i "/${args[0]}/d" ~/.warppoints
+				exitcode=1
+				break
+			fi
+			IFS=$'\n'
+		done
+		if [ ! $exitcode -eq 1 ]; then
+			echo "Warp Point $2 doesnt exist"
+			exitcode=0
+		fi
+	fi
+fi
+
+
+if [ "$1" = "list" ];then
+	echo "------------Warp points------------"
+	echo
+	IFS=$'\n'
+	for i in $(cat ~/.warppoints); do
+		IFS=' '
+		args=($i)
+		echo "\"${args[0]}\" -----> ${args[1]}"
+		IFS=$'\n'
+	done
+	exitcode=0
+fi
+if [ $exitcode -eq 2 ]; then
+	IFS=$'\n'
+	for i in $(cat ~/.warppoints); do
+		IFS=' '
+		args=($i)
+		if [[ "${args[0]}" == "$1" ]]; then
+	    	echo "Warping to ${args[1]}"
+	    	cd "${args[1]}"
+			exitcode=0
+			break
+		fi
+		IFS=$'\n'
+	done
+fi
+if [ $exitcode -eq 2 ]; then
+	echo "Warp Point not found or invalid command given"
+fi
