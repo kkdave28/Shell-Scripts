@@ -106,4 +106,4 @@ Note: To run these scripts from any directory, you need to configure the $PATH v
     Note: In order to ensure that the scripts chdirs in the parent shell, add this line to the .bashrc/.zshrc/.shrc etc.
           --> alias wd='. wd'
 
-    Note: The file that stores the warp-point pairs is stored in ".warppoints" which is located in the home directory "/home/user/" or "~/"
+    Note: The file that stores the warp-point pairs is stored in ".warppoints" which is located in the home directory "/home/username/" or "~/"
