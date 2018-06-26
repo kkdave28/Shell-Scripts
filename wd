@@ -1,5 +1,7 @@
 #!/bin/bash
+
 exitcode=2
+
 if [ $# -eq 0 ]; then
 	echo "No arguments found"
 	echo "Usage:"
