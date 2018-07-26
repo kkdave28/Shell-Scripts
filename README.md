@@ -90,9 +90,9 @@ Note: To run these scripts from any directory, you need to configure the $PATH v
 
     Note: In future, this script will be able to take multiple arguments that can kill multiple instances of multiple processes. This is only the basic version of this script.
 
-16. wd: Warp to directories. Add warp points to instantly navigate to those directory. User can set, delete and list warp points. Warp points are shothand for path to directories.
+16. wd-bash: Warp to directories. Add warp points to instantly navigate to those directory. User can set, delete and list warp points. Warp points are shothand for path to directories.
 
-    Usage: wd [option] [warp-point-name]
+    Usage: wd-bash [option] [warp-point-name]
            
            options:
                     list                  --> Lists all the warp point currently set
@@ -104,6 +104,6 @@ Note: To run these scripts from any directory, you need to configure the $PATH v
                     [warp-point-name]     --> chdirs to the warp point designated by the warp-point-name
     
     Note: In order to ensure that the scripts changes directory in the parent shell, add this line to the .bashrc/.zshrc/.shrc etc.
-          --> alias wd='. wd'
+          --> alias wd-bash='. wd-bash'
 
     Note: The file that stores the warp-point pairs is stored in ".warppoints" which is located in the home directory "/home/username/" or "~/"
