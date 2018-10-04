@@ -2,6 +2,10 @@
 
 exitcode=2
 
+if [ ! -f ~/.warppoints ]; then
+	echo "" > ~/.warppoints
+fi
+
 if [ $# -eq 0 ]; then
 	echo "No arguments found"
 	echo "Usage:"
