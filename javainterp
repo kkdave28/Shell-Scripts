@@ -26,4 +26,4 @@ fi
 javac  "$filename.java" -d ~/temp-progs/
 java -cp ~/temp-progs/ "$filename" "$@"
 rm "$filename"
-rm ~/temp-progs/"$filename.class"
+rm ~/temp-progs/*.class
