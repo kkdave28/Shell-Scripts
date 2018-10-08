@@ -7,7 +7,7 @@ if [ ! -f ~/.warppoints ]; then
 fi
 
 if [ $# -eq 0 ]; then
-	echo "No arguments found"
+	echo "No arguments given"
 	echo "Usage:"
 	echo "wd add <Warp point name>  --> adds the warp point with the name at the cwd"
 	echo "wd <name> 		  --> chdirs directly to that wapr point if it exists"
