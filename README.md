@@ -22,9 +22,11 @@ Note: To run these scripts from any directory, you need to configure the $PATH v
 
    Usage: $prm
 
-6. srm: Safely moves the files to /home/usr/Temp-Trash/ so that the user can review the files before actual deleting them completely.
+6. srm: Safely moves the files to /home/usr/Temp-Trash/ so that the user can review the files before actual deleting them completely. 
 
    Usage: $srm [file-1] [file-2] [file-3]... 
+
+   Future Upgrades: If given the argument -f or no filename arguments, empty the trash can and permenantly delete the files.
 
 7. lrm: list all the files that are safely removed and are in /home/usr/Temp-Trash/ directory.
 
@@ -33,6 +35,8 @@ Note: To run these scripts from any directory, you need to configure the $PATH v
 8. urm: Restores the file in the /home/usr/Temp-Trash directory to the original directory it was deleted from if found, if not found, prints an error message.
 
    Usage: $urm [file-name]
+
+   Future Upgrades: If no argument is given, print the Usage String and list all the files currently in the trashcan.
 
 9. drm: Displays the total space occupied by the /home/usr/Temp-Trash directory.
 
@@ -66,6 +70,8 @@ Note: To run these scripts from any directory, you need to configure the $PATH v
     
     $ runcpp foo.cpp [command line args]
 
+    Future Upgrades: Make the script so that the User can run the program stored in a particular directory from any directory (local and remote).
+
 13. javainterp: interpreter for java programs. Allows the user to run java programs without having to deal with memory overheads of .class files. Compiles the .class file and puts it into ~/temp-progs and then executes the java program. 
 
     Usage: ls -s javainterp [name of the java file without the .java extension].
@@ -84,11 +90,13 @@ Note: To run these scripts from any directory, you need to configure the $PATH v
     
     $ runjava foo.java [command line arguments].
 
+    Future Upgrades: Make the script so that the User can run the program stored in a particular directory from any directory (local and remote).
+
 15. kill_proc: Terminates all the instances of the process denoted by the name passed as an argument to it.
 
     Usage: kill_proc [proc-name]
 
-    Note: In future, this script will be able to take multiple arguments that can kill multiple instances of multiple processes. This is only the basic version of this script.
+    Future Upgrades: This script will be able to take multiple arguments that can kill multiple instances of multiple processes. This is only the basic version of this script.
 
 16. wd-bash: Warp to directories. Add warp points to instantly navigate to those directory. User can set, delete and list warp points. Warp points are shothand for path to directories.
 
@@ -107,3 +115,5 @@ Note: To run these scripts from any directory, you need to configure the $PATH v
           --> alias wd-bash='. wd-bash'
 
     Note: The file that stores the warp-point pairs is stored in ".warppoints" which is located in the home directory "/home/username/" or "~/"
+
+    Future Upgrades: wd without any argumetn should put the user in /home/username directory just like the shell builtin cd does.
