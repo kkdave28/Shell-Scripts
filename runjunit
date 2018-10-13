@@ -1,0 +1,9 @@
+#!/bin/bash
+file_list=()
+for file in "$@"; do
+    var=`echo "$file" | sed 's/\.java//'`
+    file_list+=($var)
+done
+javac -cp $JUNIT_JAR:. $@
+java -cp $JUNIT_JAR:$HAM_JAR:. org.junit.runner.JUnitCore ${file_list[@]}
+rm -rf *.class

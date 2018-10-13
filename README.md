@@ -117,3 +117,14 @@ Note: To run these scripts from any directory, you need to configure the $PATH v
     Note: The file that stores the warp-point pairs is stored in ".warppoints" which is located in the home directory "/home/username/" or "~/"
 
     Future Upgrades: wd without any argumetn should put the user in /home/username directory just like the shell builtin cd does.
+
+17. runjunit: Custom shell-script that handles the complilation and execution of JUnit test classes. User can run test classes directly using this script without having to type multiple lines of commands and linking the JUnit and Hamcrest jar files. This script can take multiple arguments at once, i.e. run multiple test classes in a single execution.
+
+    Usage: runjunit [testclass1.java] [testclass2.java] ...
+
+    Note: This script works for JUnit4 and hasn't been tested for other versions. You will need JUnit4 and Hamcrestcore .jar files in order to compile and run JUnit tests. In my case, I have sourced shell variables "$JUNIT_JAR" and "HAM_JAR" that point to the respective JUnit and Hamcrest .jar files. You need to have the same configuration or similar to it. For example, if I put bot of the .jar files in /home/user/junit-jars, I will have the following in my bash/zsh rc file:
+    
+        export JUNIT_JAR=/home/user/junit-jars/junit-4.xx.jar
+        export HAM_JAR=/home/user/junit-jars/hamcrest-core-1.x.jar
+    
+    After adding these lines in your .bash/zshrc file, just source the .bash/zshrc file or just restart the terminal.
