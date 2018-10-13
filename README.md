@@ -82,13 +82,13 @@ Note: To run these scripts from any directory, you need to configure the $PATH v
 
 12. runc and runcpp: wrapper around the cinterp and cplusplusinterp. User can pass the C/C++ file directly with any other command line arguments separated by spaces, it will do the symbolic linking for you, execute the program and cleanup afterwards.
     
-    Usage: runc/runcpp [.c/.cpp file with extension] (This script asks the user for additional arguments before compilation and execution)
+    Usage: runc/runcpp [.c/.cpp file with extension] (This script asks the user for compiler arguments before execution)
 
     example: to run foo.c/foo.cpp
     
-        $ runc foo.c 
+        $ runc foo.c [command-line args]
     
-        $ runcpp foo.cpp 
+        $ runcpp foo.cpp [command-line args]
 
     Future Upgrades: Make the script so that the User can run the program stored in a particular directory from any directory (local and remote).
 
