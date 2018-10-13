@@ -4,47 +4,67 @@ Note: To run these scripts from any directory, you need to configure the $PATH v
 
 1. bkupro: Takes a backup of all '.\*' files from the /home/usr directory and copies it to /home/usr/Backup-profiles/ .
 
-   Usage: $bkupro
+   Usage: 
+   
+        $ bkupro
 
 2. clnbkup: removes all files from the directory /home/usr/Backup-profiles.
 
-   Usage: $clnbkup
+   Usage: 
+   
+        $ clnbkup
 
 3. fastgit: Takes all files from the current directory and prompts user for a commit message, then pushes all the files to the git. A repository needs to be created in that directory for it to work.
 
-   Usage: $fastgit
+   Usage: 
+    
+        $ fastgit
 
 4. initgit: initializes a repository at the current working directory and ask the user to put anything in the Readme.md, asks user to input the first commit message and asks the user the link to the repo they want to push it to.
 
-   Usage: $initgit
+   Usage: 
+   
+        $ initgit
 
 5. prm: Permanantly removes all files that were temporarily moved to the directory /home/usr/Temp-Trash, asks users to confirm before deleting all files.
 
-   Usage: $prm
+   Usage: 
+   
+        $ prm
 
 6. srm: Safely moves the files to /home/usr/Temp-Trash/ so that the user can review the files before actual deleting them completely. 
 
-   Usage: $srm [file-1] [file-2] [file-3]... 
+   Usage: 
+   
+        $ srm [file-1] [file-2] [file-3]... 
 
    Future Upgrades: If given the argument -f or no filename arguments, empty the trash can and permenantly delete the files.
 
 7. lrm: list all the files that are safely removed and are in /home/usr/Temp-Trash/ directory.
 
-   Usage: $lrm
+   Usage: 
+   
+        $ lrm
 
 8. urm: Restores the file in the /home/usr/Temp-Trash directory to the original directory it was deleted from if found, if not found, prints an error message.
 
-   Usage: $urm [file-name]
+   Usage: 
+   
+        $ urm [file-name]
 
    Future Upgrades: If no argument is given, print the Usage String and list all the files currently in the trashcan.
 
 9. drm: Displays the total space occupied by the /home/usr/Temp-Trash directory.
 
-   Usage: $drm
+   Usage: 
+   
+        $ drm
 
 10. lss: lists all the files in the present working directory, sorted in descending order of file size  or directory whose name is passed as an argument. It is an extension from the 'ls' command. Refer to the man page of 'ls' command for information on option. man (1) ls.
 
-    Usage: $lss [options]
+    Usage: 
+    
+        $ lss [options]
 
 11. cinterp and cplusplusinterp: interpreter for C/C++ programs. Allows the user to run the C/C++ program temporarily by compiling the file to ~/temp-progs and then running the program from that directory. After the program executes, it cleans up the executable, and any other temporary files that may have been created during the compilation/execution. 
 
@@ -56,9 +76,9 @@ Note: To run these scripts from any directory, you need to configure the $PATH v
     
     example: to run foo.c/foo.cpp
     
-    $ ln -s cinterp/cplusplusinterp foo
+        $ ln -s cinterp/cplusplusinterp foo
     
-    $ ./foo
+        $ ./foo
 
 12. runc and runcpp: wrapper around the cinterp and cplusplusinterp. User can pass the C/C++ file directly with any other command line arguments separated by spaces, it will do the symbolic linking for you, execute the program and cleanup afterwards.
     
@@ -66,9 +86,9 @@ Note: To run these scripts from any directory, you need to configure the $PATH v
 
     example: to run foo.c/foo.cpp
     
-    $ runc foo.c [command line args]
+        $ runc foo.c [command line args]
     
-    $ runcpp foo.cpp [command line args]
+        $ runcpp foo.cpp [command line args]
 
     Future Upgrades: Make the script so that the User can run the program stored in a particular directory from any directory (local and remote).
 
@@ -78,9 +98,9 @@ Note: To run these scripts from any directory, you need to configure the $PATH v
 
     example: to run foo.java
     
-    $ ln -s javainterp foo
+        $ ln -s javainterp foo
     
-    $ ./foo
+        $ ./foo
 
 14. runjava: Wrapper for javainterp, allows the user to directly run java files without explicitly creating the link to javainterp. Allows the user to pass command line arguments to java programs.
     
@@ -88,19 +108,23 @@ Note: To run these scripts from any directory, you need to configure the $PATH v
 
     example: to run foo.java
     
-    $ runjava foo.java [command line arguments].
+        $ runjava foo.java [command line arguments].
 
     Future Upgrades: Make the script so that the User can run the program stored in a particular directory from any directory (local and remote).
 
 15. kill_proc: Terminates all the instances of the process denoted by the name passed as an argument to it.
 
-    Usage: kill_proc [proc-name]
+    Usage: 
+    
+        $ kill_proc [proc-name]
 
     Future Upgrades: This script will be able to take multiple arguments that can kill multiple instances of multiple processes. This is only the basic version of this script.
 
 16. wd-bash: Warp to directories. Add warp points to instantly navigate to those directory. User can set, delete and list warp points. Warp points are shothand for path to directories.
 
-    Usage: wd-bash [option] [warp-point-name]
+    Usage: 
+    
+           $ wd-bash [option] [warp-point-name]
            
            options:
                     list                  --> Lists all the warp point currently set
@@ -111,8 +135,9 @@ Note: To run these scripts from any directory, you need to configure the $PATH v
                     
                     [warp-point-name]     --> chdirs to the warp point designated by the warp-point-name
     
-    Note: In order to ensure that the scripts changes directory in the parent shell, add this line to the .bashrc/.zshrc/.shrc etc.
-          --> alias wd-bash='. wd-bash'
+    Note: In order to ensure that the scripts changes directory in the parent shell, add this line to the .bashrc/.zshrc/.shrc etc. 
+        
+            alias wd-bash='. wd-bash'
 
     Note: The file that stores the warp-point pairs is stored in ".warppoints" which is located in the home directory "/home/username/" or "~/"
 
@@ -120,7 +145,9 @@ Note: To run these scripts from any directory, you need to configure the $PATH v
 
 17. runjunit: Custom shell-script that handles the complilation and execution of JUnit test classes. User can run test classes directly using this script without having to type multiple lines of commands and linking the JUnit and Hamcrest jar files. This script can take multiple arguments at once, i.e. run multiple test classes in a single execution.
 
-    Usage: runjunit [testclass1.java] [testclass2.java] ...
+    Usage: 
+    
+            $ runjunit [testclass1.java] [testclass2.java] ...
 
     Note: This script works for JUnit4 and hasn't been tested for other versions. You will need JUnit4 and Hamcrestcore .jar files in order to compile and run JUnit tests. In my case, I have sourced shell variables "$JUNIT_JAR" and "HAM_JAR" that point to the respective JUnit and Hamcrest .jar files. You need to have the same configuration or similar to it. For example, if I put bot of the .jar files in /home/user/junit-jars, I will have the following in my bash/zsh rc file:
     
