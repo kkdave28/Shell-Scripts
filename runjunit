@@ -1,4 +1,9 @@
 #!/bin/bash
+if [ $# -eq 0 ]; then
+    echo "No test source files detected."
+    echo "Usage: runjunit TestFile1.java TestFile2.java ..."
+    exit -1
+fi
 file_list=()
 for file in "$@"; do
     var=`echo "$file" | sed 's/\.java//'`
